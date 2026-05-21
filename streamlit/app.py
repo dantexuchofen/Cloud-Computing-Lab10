@@ -58,7 +58,7 @@ with st.form("crear_libro"):
         libros.insert_one({
             "titulo": titulo,
             "autor": autor,
-            "anio": int(anio),
+            "año": int(anio),
             "disponible": disponible
         })
 
@@ -115,7 +115,7 @@ nuevo_autor = st.text_input(
 
 nuevo_anio = st.number_input(
     "Nuevo año",
-    min_value=1900,
+    min_value=1500,
     max_value=2100,
     step=1,
     key="nuevo_anio"
