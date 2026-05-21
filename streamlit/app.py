@@ -38,7 +38,7 @@ with st.form("crear_libro"):
 
     autor = st.text_input("Autor")
 
-    anio = st.number_input(
+    año = st.number_input(
         "Año",
         min_value=1900,
         max_value=2100,
@@ -58,7 +58,7 @@ with st.form("crear_libro"):
         libros.insert_one({
             "titulo": titulo,
             "autor": autor,
-            "año": int(anio),
+            "año": int(año),
             "disponible": disponible
         })
 
@@ -113,12 +113,12 @@ nuevo_autor = st.text_input(
     "Nuevo autor"
 )
 
-nuevo_anio = st.number_input(
+nuevo_año = st.number_input(
     "Nuevo año",
-    min_value=1500,
+    min_value=1900,
     max_value=2100,
     step=1,
-    key="nuevo_anio"
+    key="nuevo_año"
 )
 
 nuevo_disponible = st.checkbox(
@@ -138,7 +138,7 @@ if st.button("Actualizar"):
                 "$set": {
                     "titulo": nuevo_titulo,
                     "autor": nuevo_autor,
-                    "anio": int(nuevo_anio),
+                    "año": int(nuevo_año),
                     "disponible": nuevo_disponible
                 }
             }
